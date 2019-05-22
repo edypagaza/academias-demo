@@ -5,7 +5,8 @@ import Text from './Text';
 import Form from './Form';
 import User from './User';
 import Home from './Home';
-import '../styles/app.css'
+import '../styles/app.css';
+import { Switch } from 'react-router';
 
 function App() {
   return (
@@ -13,13 +14,14 @@ function App() {
       <Router>
         <SimpleNavBar/>
         <div className="main-container">
-        <Route exact path="/" component={Home}/>
-          <Route path="/text" component={Text}/>
-          <Route path="/form" component={Form}/>
-          <Route path="/user" component={User}/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/text" component={Text}/>
+            <Route path="/form" component={Form}/>
+            <Route path="/user" component={User}/>
+          </Switch>
         </div>
       </Router>
-
     </div>
   );
 }
